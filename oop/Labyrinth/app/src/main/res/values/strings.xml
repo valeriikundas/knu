@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Labyrinth</string>
+    <string name="up_btn">UP</string>
+    <string name="right_btn">RIGHT</string>
+    <string name="down_btn">DOWN</string>
+    <string name="left_btn">LEFT</string>
+    <string name="game_won">Game Won!</string>
+</resources>

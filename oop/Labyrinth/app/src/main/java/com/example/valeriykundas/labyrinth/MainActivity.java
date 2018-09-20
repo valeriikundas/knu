@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
     private int oldStateOfCurrentPoint;
 
     private boolean running = true;
-    private boolean gameWon = false;
 
     TextView tv_board;
 
@@ -150,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goByOffset(int first, int second) {
-        Point nextPoint = currentPoint;
+        Point nextPoint = new Point(currentPoint.first, currentPoint.second);
         nextPoint.first += first;
         nextPoint.second += second;
         if (isPointOnBoard(nextPoint) && canGoTo(board[nextPoint.first][nextPoint.second])) {
@@ -159,8 +158,8 @@ public class MainActivity extends AppCompatActivity {
             oldStateOfCurrentPoint = board[currentPoint.first][currentPoint.second];
             board[currentPoint.first][currentPoint.second] = CELL_CURRENT;
 
-            if (nextPoint.equals(entrancePoint)) {
-                gameWon = true;
+            if (nextPoint.equals(exitPoint)) {
+                running = false;
                 showGameWonMessage();
             }
         }
@@ -184,20 +183,13 @@ public class MainActivity extends AppCompatActivity {
         tv_board.setText(boardAsString);
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        tv_board = findViewById(R.id.tv_board);
-        tv_board.setTextSize(50);
-        setOnClickListeners();
-
-        //randomize entrance
+    private void generateEntranceAndExitPoints() {
         entrancePoint = getRandomPointCoordinates();
         board[entrancePoint.first][entrancePoint.second] = CELL_ENTRANCE;
 
-        //randomize exit
+        currentPoint = entrancePoint;
+        oldStateOfCurrentPoint = CELL_ENTRANCE;
+
         exitPoint = getRandomPointCoordinates();
         board[exitPoint.first][exitPoint.second] = CELL_EXIT;
 
@@ -210,21 +202,33 @@ public class MainActivity extends AppCompatActivity {
             else
                 done = true;
         }
+    }
 
-        //fill blocks while paths exist
+    void fillBlocks() {
         Point last_added_block = new Point();
 
         while (pathExists())
             last_added_block = addRandomBlock();
 
         board[last_added_block.first][last_added_block.second] = CELL_FREE;
+    }
 
-        //show board and refresh
-        while (true) {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tv_board = findViewById(R.id.tv_board);
+
+        setOnClickListeners();
+        generateEntranceAndExitPoints();
+        fillBlocks();
+
+        refreshBoardView();
+
+        /*while (true) {
             if (running)
                 refreshBoardView();
-        }
-
-        //message when came to exit
+        }*/
     }
 }

@@ -3,10 +3,13 @@ package com.example.valeriykundas.labyrinth;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
@@ -20,15 +23,15 @@ public class MainActivity extends AppCompatActivity {
     private static final int DIRECTION_DOWN = 2;
     private static final int DIRECTION_LEFT = 3;
 
-    private static final int CELL_FREE = 0;
-    private static final int CELL_BLOCK = 1;
-    private static final int CELL_ENTRANCE = 2;
-    private static final int CELL_EXIT = 3;
-    private static final int CELL_CURRENT = 9;
+    private static final char CELL_FREE = '·';
+    private static final char CELL_BLOCK = '#';
+    private static final char CELL_ENTRANCE = 'I';
+    private static final char CELL_EXIT = 'O';
+    private static final char CELL_CURRENT = '@';
 
     private static final int[][] delta = {{0, 1}, {1, 0}, {-1, 0}, {0, -1}};
 
-    private static final int board_size = 5;
+    private static final int board_size = 10;
 
     private class Point {
         private int first;
@@ -45,20 +48,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private int[][] board = new int[board_size][board_size];
+    private char[][] board = new char[board_size][board_size];
 
     private Point entrancePoint;
     private Point exitPoint;
     private Point currentPoint;
 
-    private int oldStateOfCurrentPoint;
-
-    private boolean running = true;
+    private char oldStateOfCurrentPoint;
 
     TextView tv_board;
 
     @NonNull
-    private Point getRandomPointCoordinates() {
+    private Point getRandomBorderPointCoordinates() {
         Random rand = new Random();
         int coordinate = rand.nextInt(board_size);
         int side = rand.nextInt(4);
@@ -75,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return new Point();
+    }
+
+    private Point getRandomPointCoordinates() {
+        Random rand = new Random();
+        int first = rand.nextInt(board_size);
+        int second = rand.nextInt(board_size);
+
+        return new Point(first, second);
     }
 
     private boolean pathExists() {
@@ -115,6 +124,12 @@ public class MainActivity extends AppCompatActivity {
         return point;
     }
 
+    private void initBoard() {
+        for (int i = 0; i < board_size; ++i)
+            for (int j = 0; j < board_size; ++j)
+                board[i][j] = CELL_FREE;
+    }
+
     @NonNull
     private String getBoardAsString() {
         StringBuilder builder = new StringBuilder();
@@ -134,9 +149,8 @@ public class MainActivity extends AppCompatActivity {
         Button button = findViewById(id);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                running = false;
                 goByOffset(first, second);
-                running = true;
+                refreshBoardView();
             }
         });
     }
@@ -158,8 +172,7 @@ public class MainActivity extends AppCompatActivity {
             oldStateOfCurrentPoint = board[currentPoint.first][currentPoint.second];
             board[currentPoint.first][currentPoint.second] = CELL_CURRENT;
 
-            if (nextPoint.equals(exitPoint)) {
-                running = false;
+            if (nextPoint.first == exitPoint.first && nextPoint.second == exitPoint.second) {
                 showGameWonMessage();
             }
         }
@@ -171,7 +184,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_down).setVisibility(View.INVISIBLE);
         findViewById(R.id.btn_right).setVisibility(View.INVISIBLE);
 
-        tv_board.setText(R.string.game_won);
+        String s = getResources().getString(R.string.game_won);
+        Toast.makeText(getApplicationContext(), s, Toast.LENGTH_LONG).show();
     }
 
     private boolean isPointOnBoard(Point a) {
@@ -184,13 +198,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void generateEntranceAndExitPoints() {
-        entrancePoint = getRandomPointCoordinates();
+        entrancePoint = getRandomBorderPointCoordinates();
         board[entrancePoint.first][entrancePoint.second] = CELL_ENTRANCE;
 
         currentPoint = entrancePoint;
         oldStateOfCurrentPoint = CELL_ENTRANCE;
 
-        exitPoint = getRandomPointCoordinates();
+        exitPoint = getRandomBorderPointCoordinates();
         board[exitPoint.first][exitPoint.second] = CELL_EXIT;
 
         //make sure entrance and exit are not close
@@ -198,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
         while (!done) {
             int distance = abs(entrancePoint.first - exitPoint.first) + abs(entrancePoint.second - exitPoint.second);
             if (distance < 2)
-                exitPoint = getRandomPointCoordinates();
+                exitPoint = getRandomBorderPointCoordinates();
             else
                 done = true;
         }
@@ -218,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initBoard();
+
         tv_board = findViewById(R.id.tv_board);
 
         setOnClickListeners();
@@ -225,10 +241,5 @@ public class MainActivity extends AppCompatActivity {
         fillBlocks();
 
         refreshBoardView();
-
-        /*while (true) {
-            if (running)
-                refreshBoardView();
-        }*/
     }
 }

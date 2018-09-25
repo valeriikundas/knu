@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10pt"
-        android:layout_marginBottom="10pt"
-        android:textSize="40sp"
+        android:textSize="30sp"
+        android:fontFamily="monospace"
         android:gravity="center"
         android:text="Hello World!" />
 

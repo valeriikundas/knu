@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ФК "Динамо Київ"</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+	<script src="script.js"></script>
+</head>
+<body>
+	<header>
+		<div class="row">
+			<div class="column2" align="center">
+				<div class="row">
+					<div class="column2" align="right">
+						<img src="images/logo.jpg" alt="logo" height="100" width="100"/>
+					</div>
+					<div class="column2" align="left">
+						<h3 class="bold">Футбольний клуб<br>Динамо Київ</h3>
+						<span>Непереможні (колись)</span>
+					</div>
+				</div>
+			</div>
+			<div class="column2 center" align="center">
+				<span class="phonenumber">+38(050) 805-74-00</span><br>
+				<span class="phonenumber">+38(050) 921-73-89</span><br>
+				<a class="dashed bold" onclick="popupShow()">Contact</a>
+			</div>
+		</div>
+	</header>
+	<menu>
+		<ul>
+  			<li><a href="index.html">Головна</a></li>
+  			<li><a href="tickets.html">Квитки</a></li>
+  			<li><a href="delivery.html">Доставка і оплата</a></li>
+  			<li><a href="contacts.html">Контакти</a></li>
+		</ul>
+	</menu>
+	
+	<div class="delivery" style="margin: 30px auto 0px; width: 50%;">
+		<h1>Доставка і оплата</h1>
+		<hr>
+		<div>
+			Ми намагаємося бути якомога зручнішими для наших покупців та пропонуємо наступні варіанти доставки та оплати вашого замовлення.<br><br>
+			<h2>Як ми доставляємо квитки?</h2>
+			<h3>Самовивіз</h3>
+			Ви можете приїхати в офіс за адресою м.Київ, вул.Велика Васильківська, 55.<br> В такому випадку доставка безкоштовна.
+			<h3>Нова Пошта</h3>
+			<b>Безкоштовно:</b><br>
+			При замовленні квитків на суму понад 2 000 грн доставка у будь-яке відділення Нової пошти.<br><br>
+			<b>При передоплаті:</b><br>
+			Доставка у відділення буде коштувати 30 грн.<br><br>
+
+			<b>Із зворотною доставкою коштів:</b><br>
+			Доставка у відділення буде коштувати 50 грн.<br><br>
+			Ви отримаєте ваше замовлення протягом одного-двох робочих днів після відправки.
+			<br><br>
+			<h2>Як оплатити покупку?</h2>
+			<h3>Готівкою</h3>
+			Оплатити замовлення готівкою можна при його отриманні:
+    		<ul>
+    			<li>у нашому магазині;</li>
+			    <li>у відділенні Нової пошти;</li>
+    			<li>у кур’єра Нової пошти.</li>
+			</ul>
+			<h3>Карткою</h3>
+			Ви можете оплатити замовлення карткою:
+			<ul>
+				<li>у нашому магазині;</li>
+    			<li>під час створення замовлення в інтернет-магазині і при будь-якому способі доставки;</li>
+    			<li>у окремих відділеннях Нової пошти (на жаль, не в усіх).</li>
+    		</ul>
+    		<br><br>
+		</div>
+	</div>
+
+	<hr>
+	<div class="nsk_signature">
+		Національний спортивний комплекс «Олімпійський» - головна спортивна та культурна арена України.<br>
+		З моменту відкриття НСК у 2011 році тут проведено понад 100 футбольних матчів, включаючи матчі Ліги Європи УЄФА, Ліги чемпіонів УЄФА. Стадіон отримав високу оцінку щодо організації спортивних заходів. Крім того, тут відбулися успішні концерти найпопулярніших українських і всесвітньо відомих груп та музикантів (Океан Ельзи, Мадонна, Red Hot Chili Peppers, Depesche Mode), що сприяло становленню статусу НСК в світі, як концертного майданчику, що відповідає всім сучасним стандартам.
+	</div>	
+
+	<footer>
+		<div class="row" style="height: 100%;">
+			<div class="column3" style="color: #FFF0F0; display:flex; justify-content:center; align-items:center;">
+				@2012-2018 ФК "Динамо Київ"<br>
+				valeriykundas@gmail.com
+			</div>
+			<div class="column3" style="display: flex; justify-content: center; align-items: center;">
+				<ul>
+				    <li><a href="index.html">Головна</a></li>
+					<li><a href="tickets.html">Квитки</a></li>
+					<li><a href="delivery.html">Доставка і оплата</a></li>
+	  			    <li><a href="contacts.html">Контакти</a></li>
+				</ul>
+			</div>
+			<div class="column3" style="display: flex; justify-content: center; align-items: center;">
+				<div class="row">
+					<img src="images/logo.jpg" width="40" height="40" alt="logo/>
+					<span><a href="https://www.templatemonster.com/">Розробка сайту-<br>компанія "ФК Динамо Київ"</a></span>
+				</div> 
+			</div>
+		</div>
+	</footer>	
+
+	<div id="popupContact">
+		<form action="#" id="form" method="post" name="form">
+			<!--<img id="close" src="images/close.jpg" height="20" onclick="popupHide()">-->
+			<h2>Зв'язатися</h2>
+			<input type="text" name="name" id="name" placeholder="Ваше ім'я">
+			<input id="phone" name="phone" placeholder="Телефон" type="tel">
+			<input id="email" name="email" placeholder="Email" type="text">
+			<textarea id="message" name="message" placeholder="Повідомлення"></textarea>
+			<button style="background-color: #4169E1; font-size: 20px;">
+				<a href="#" onclick="popupHide()" id="submit">Надіслати</a>
+			</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<Playlist Version="1.0"><Add Test="UnitTesting::UnitTest1::stringRandomSmall" /><Add Test="UnitTesting::UnitTest1::stringRandomBig" /></Playlist>

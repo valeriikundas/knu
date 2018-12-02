@@ -1,42 +1,44 @@
 package com.company;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
-import java.nio.channels.*;
-import java.util.*;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
+import java.nio.channels.SocketChannel;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Set;
 
 public class Server {
 
     private static final int BUFFER_SIZE = 74;
     private static final long PROMPT_PERIOD = 5;
     private static ArrayList<Integer> returns = new ArrayList<>();
-    private static ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     private static int input = 0;
     private boolean fSent = false;
+    private static long startTime = System.currentTimeMillis();
 
+    private static boolean running = true;
     private static final Runnable periodic = () -> {
-        System.out.println("1. Continue\n2. Continue without prompt\n3. Cancel");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        while (running) {
+            if (System.currentTimeMillis() - startTime > PROMPT_PERIOD * 1000) {
+                System.out.println("1. Continue\n2. Continue without prompt\n3. Cancel");
+                Scanner scanner = new Scanner(System.in);
 
-        String command;
-        try {
-            command = br.readLine();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return;
-        }
+                String command = scanner.next();
 
-        if (command.equals("2")) {
-            scheduler.shutdown();
-        } else if (command.equals("3")) {
-            System.out.println("exiting");
-            System.exit(0);
+                startTime = System.currentTimeMillis();
+
+                if (command.equals("2")) {
+                    running = false;
+                } else if (command.equals("3")) {
+                    System.out.println("exiting");
+                    System.exit(0);
+                }
+            }
         }
     };
 
@@ -46,20 +48,32 @@ public class Server {
             System.out.println("enter command number");
             input = scanner.nextInt();
 
-            statusCheck();
             Server server = new Server();
 
-            GUI gui = new GUI("start");
-            javax.swing.SwingUtilities.invokeAndWait(() -> gui.createAndShowGUI());
+
+            new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(2000);
+                        Client.main(new String[0]);
+                        Client.main(new String[0]);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
 
             server.start();
+            periodic.run();
+
+            //GUI gui = new GUI("startTime");
+            //javax.swing.SwingUtilities.invokeAndWait(() -> gui.createAndShowGUI());
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    private static void statusCheck() {
-        scheduler.scheduleAtFixedRate(periodic, PROMPT_PERIOD, PROMPT_PERIOD, TimeUnit.SECONDS);
     }
 
     private static Integer F(Integer a, Integer b) {
@@ -75,9 +89,9 @@ public class Server {
         InetSocketAddress endpoint = new InetSocketAddress("localhost", port);
         serverSocketChannel.socket().bind(endpoint);
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
-        System.out.println("server is starting on port " + port);
 
         while (true) {
+
             int readyCount = selector.select();
             if (Integer.valueOf(0).equals(readyCount)) {
                 continue;
@@ -110,6 +124,7 @@ public class Server {
             fSent = true;
             value += 10;
         }
+        System.out.printf("send %d\n", value);
 
         byte[] bytes = String.valueOf(value).getBytes();
         buffer.put(bytes);
@@ -138,13 +153,10 @@ public class Server {
         Integer res = Integer.parseInt(s);
         returns.add(res);
         buffer.flip();
-        System.out.println("server has read res=" + res);
         if (Integer.valueOf(2).equals(returns.size())) {
             Integer finalResult = F(returns.get(0), returns.get(1));
-            System.out.printf("final results %d %d\n", returns.get(0), returns.get(1));
             System.out.println("server final result = " + finalResult);
 
-            scheduler.shutdown();
             System.exit(0);
         }
 
@@ -164,6 +176,5 @@ public class Server {
         client.register(selector, SelectionKey.OP_WRITE);
 
         String clientAddress = client.getRemoteAddress().toString();
-        System.out.println("server connected to " + clientAddress);
     }
 }

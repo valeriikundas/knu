@@ -1,7 +1,10 @@
 package com.company;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
@@ -20,14 +23,16 @@ public class Server {
     private static int input = 0;
     private boolean fSent = false;
     private static long startTime = System.currentTimeMillis();
+    private static boolean resultComputed = false;
+    private static int finalResult = 0;
 
     private static boolean running = true;
     private static final Runnable periodic = () -> {
         while (running) {
             if (System.currentTimeMillis() - startTime > PROMPT_PERIOD * 1000) {
                 System.out.println("1. Continue\n2. Continue without prompt\n3. Cancel");
-                Scanner scanner = new Scanner(System.in);
 
+                Scanner scanner = new Scanner(System.in);
                 String command = scanner.next();
 
                 startTime = System.currentTimeMillis();
@@ -36,6 +41,11 @@ public class Server {
                     running = false;
                 } else if (command.equals("3")) {
                     System.out.println("exiting");
+                    //я думаю тут не потрібно додавати вивід результату у випадку, якщо він порахований.
+                    //бо він виводиться одразу після того як порахований.
+                    //if (resultComputed) {
+                    //  System.out.println(finalResult);
+                    //}
                     System.exit(0);
                 }
             }
@@ -50,24 +60,27 @@ public class Server {
 
             Server server = new Server();
 
-
-            new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Thread.sleep(2000);
-                        Client.main(new String[0]);
-                        Client.main(new String[0]);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+            Thread thread = new Thread(() -> {
+                try {
+                    while (true) {
+                        try (Socket socket = new Socket()) {
+                            socket.connect(new InetSocketAddress("localhost", 8080), 10);
+                            break;
+                        } catch (IOException e) {
+                        }
                     }
-                }
-            };
+                    System.out.println("server exists");
 
-            server.start();
+                    Client.main(new String[0]);
+                    Client.main(new String[0]);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+            thread.start();
+
             periodic.run();
+            server.start();
 
             //GUI gui = new GUI("startTime");
             //javax.swing.SwingUtilities.invokeAndWait(() -> gui.createAndShowGUI());
@@ -91,8 +104,7 @@ public class Server {
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 
         while (true) {
-
-            int readyCount = selector.select();
+            int readyCount = selector.select(100);
             if (Integer.valueOf(0).equals(readyCount)) {
                 continue;
             }
@@ -154,9 +166,9 @@ public class Server {
         returns.add(res);
         buffer.flip();
         if (Integer.valueOf(2).equals(returns.size())) {
-            Integer finalResult = F(returns.get(0), returns.get(1));
+            //resultComputed = true;
+            //finalResult = F(returns.get(0), returns.get(1));
             System.out.println("server final result = " + finalResult);
-
             System.exit(0);
         }
 

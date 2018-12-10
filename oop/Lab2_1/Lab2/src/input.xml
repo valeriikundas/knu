@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Lab1:Medicine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:Lab1="http://nure.ua/thao/SummaryTask3/entity"
+		xsi:schemaLocation="http://nure.ua/thao/SummaryTask3/entity input.xsd">		
+		
+	<Medication>
+		<Name>Enam</Name>
+		<Pharm>Dr.Reddy's</Pharm>
+		<Group>Lowers blood pressure</Group>
+		<Analogs>Enalapril</Analogs>
+		<Versions>Pills</Versions>
+		<Certificate>331233</Certificate>
+		<Package>Pack of 10 pills</Package>
+		<Dosage>1 pill per day</Dosage>
+	</Medication>
+	
+	<Medication>
+		<Name>Mezim</Name>
+		<Pharm>Berlin-chemie</Pharm>
+		<Group>Enzyme preparations</Group>
+		<Analogs>Creon, Pancreatin, Panzinorm</Analogs>
+		<Versions>Pills</Versions>
+		<Certificate>0293410</Certificate>
+		<Package>Pack of 10 tables</Package>
+		<Dosage>2-3 pills per day during food </Dosage>
+	</Medication>
+
+	<Medication>
+		<Name>Noshpa</Name>
+		<Pharm>Sanofi</Pharm>
+		<Group>Antispasmodic</Group>
+		<Analogs>Drotaverin</Analogs>
+		<Versions>Ampoules</Versions>
+		<Certificate>2937983</Certificate>
+		<Package>Pack of 24</Package>
+		<Dosage>40 mg/pill</Dosage>
+	</Medication>	
+
+</Lab1:Medicine>

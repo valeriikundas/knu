@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Medicine>
+    <Medication>
+        <Name>Ношпа</Name>
+        <PHARM/>
+        <Group>Спазмалитик</Group>
+        <Analogs>Дротаверин</Analogs>
+        <Versions>Ампулы</Versions>
+        <Certificate>2937983</Certificate>
+        <Package>Упаковка по 24 таблетки</Package>
+        <Dosage>40мг в таблетке</Dosage>
+    </Medication>
+    <Medication>
+        <Name>Энам</Name>
+        <PHARM/>
+        <Group>Понижает артериальное давление</Group>
+        <Analogs>Эналоприл</Analogs>
+        <Versions>Таблетки</Versions>
+        <Certificate>3333333</Certificate>
+        <Package>Упаковка по 10 табл</Package>
+        <Dosage>1 табл раз в день</Dosage>
+    </Medication>
+    <Medication>
+        <Name>Мезим</Name>
+        <PHARM/>
+        <Group>Ферментные препараты</Group>
+        <Analogs>Креон, панкреатин, панщинорм</Analogs>
+        <Versions>Таблетки</Versions>
+        <Certificate>0293410</Certificate>
+        <Package>Упавкова по 10 таб </Package>
+        <Dosage>по 1 таблетке во время еды 2-3 раза в день</Dosage>
+    </Medication>
+</Medicine>

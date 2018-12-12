@@ -82,7 +82,7 @@ public class Client {
                 break;
             }
             case 28: {
-                pause = 6;
+                pause = 3;
                 break;
             }
 
@@ -97,7 +97,7 @@ public class Client {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        return rv * 100;
+        return rv;
     }
 
     public static void main(String[] args) throws IOException {

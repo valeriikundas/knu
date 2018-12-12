@@ -5,36 +5,36 @@
 		xsi:schemaLocation="http://nure.ua/thao/SummaryTask3/entity input.xsd">		
 		
 	<Medication>
-		<Name>Enam</Name>
+		<Name>Энам</Name>
 		<Pharm>Dr.Reddy's</Pharm>
-		<Group>Lowers blood pressure</Group>
-		<Analogs>Enalapril</Analogs>
-		<Versions>Pills</Versions>
-		<Certificate>331233</Certificate>
-		<Package>Pack of 10 pills</Package>
-		<Dosage>1 pill per day</Dosage>
+		<Group>Понижает артериальное давление</Group>
+		<Analogs>Эналоприл</Analogs>
+		<Versions>Таблетки</Versions>
+		<Certificate>3333333</Certificate>
+		<Package>Упаковка по 10 табл</Package>
+		<Dosage>1 табл раз в день</Dosage>
 	</Medication>
 	
 	<Medication>
-		<Name>Mezim</Name>
+		<Name>Мезим</Name>
 		<Pharm>Berlin-chemie</Pharm>
-		<Group>Enzyme preparations</Group>
-		<Analogs>Creon, Pancreatin, Panzinorm</Analogs>
-		<Versions>Pills</Versions>
+		<Group>Ферментные препараты</Group>
+		<Analogs>Креон, панкреатин, панщинорм</Analogs>
+		<Versions>Таблетки</Versions>
 		<Certificate>0293410</Certificate>
-		<Package>Pack of 10 tables</Package>
-		<Dosage>2-3 pills per day during food </Dosage>
+		<Package>Упавкова по 10 таб </Package>
+		<Dosage>по 1 таблетке во время еды 2-3 раза в день</Dosage>
 	</Medication>
 
 	<Medication>
-		<Name>Noshpa</Name>
+		<Name>Ношпа</Name>
 		<Pharm>Sanofi</Pharm>
-		<Group>Antispasmodic</Group>
-		<Analogs>Drotaverin</Analogs>
-		<Versions>Ampoules</Versions>
+		<Group>Спазмалитик</Group>
+		<Analogs>Дротаверин</Analogs>
+		<Versions>Ампулы</Versions>
 		<Certificate>2937983</Certificate>
-		<Package>Pack of 24</Package>
-		<Dosage>40 mg/pill</Dosage>
+		<Package>Упаковка по 24 таблетки</Package>
+		<Dosage>40мг в таблетке</Dosage>
 	</Medication>	
 
 </Lab1:Medicine>

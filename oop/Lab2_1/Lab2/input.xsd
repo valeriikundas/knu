@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://nure.ua/thao/SummaryTask3/entity" 
+	xmlns:tns="http://nure.ua/thao/SummaryTask3/entity">
+
+	<xsd:element name="Medicine">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Medication"
+							 type="tns:Medication" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:complexType name="Medication">
+		<xsd:sequence>
+			<xsd:element name="Name" type="xsd:string"/>
+			<xsd:element name="Pharm" type="xsd:token"/>
+			<xsd:element name="Group" type="xsd:string"/>
+			<xsd:element name="Analogs" type="xsd:string" />
+			<xsd:element name="Versions" type="tns:Versions" />
+			<xsd:element name="Certificate" type="xsd:decimal" />
+			<xsd:element name="Package" type="xsd:string" />
+			<xsd:element name="Dosage" type="xsd:string" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="Versions" final="restriction">
+		<xsd:restriction base="xsd:string">
+    			<xsd:enumeration value="Ампулы"/>
+				<xsd:enumeration value="Таблетки"/>
+  		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

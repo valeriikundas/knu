@@ -1,5 +1,6 @@
 package com.company;
 
+import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -24,12 +25,28 @@ public class Server {
     private boolean fSent = false;
     private static long startTime = System.currentTimeMillis();
     private static boolean resultComputed = false;
-    private static int finalResult = 0;
+    private static int finalResult = 1;
 
     private static boolean running = true;
+    private Selector selector;
+
+    private enum State {
+        COMPUTING, DONE, CANCELLED
+    }
+
+    private static final Object sync = new Object();
+
+    static State state = State.COMPUTING;
+
+    private static final Object prompt = new Object();
     private static final Runnable periodic = () -> {
         while (running) {
-            if (System.currentTimeMillis() - startTime > PROMPT_PERIOD * 1000) {
+            try {
+                Thread.sleep(PROMPT_PERIOD * 1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            synchronized (prompt) {
                 System.out.println("1. Continue\n2. Continue without prompt\n3. Cancel");
 
                 Scanner scanner = new Scanner(System.in);
@@ -40,13 +57,15 @@ public class Server {
                 if (command.equals("2")) {
                     running = false;
                 } else if (command.equals("3")) {
-                    System.out.println("exiting");
-                    //я думаю тут не потрібно додавати вивід результату у випадку, якщо він порахований.
-                    //бо він виводиться одразу після того як порахований.
-                    //if (resultComputed) {
-                    //  System.out.println(finalResult);
-                    //}
-                    System.exit(0);
+                    System.err.println(state);
+                    synchronized (sync) {
+                        if (state != State.DONE) {
+                            System.out.println("exiting");
+                            System.out.println("actually exit in prompt");
+                            state = State.CANCELLED;
+                            System.exit(0);
+                        }
+                    }
                 }
             }
         }
@@ -59,27 +78,22 @@ public class Server {
             input = scanner.nextInt();
 
             Server server = new Server();
+            server.init();
 
-            Thread thread = new Thread(() -> {
+            System.err.println("server exists");
+
+            Runnable clientRunnable = () -> {
                 try {
-                    while (true) {
-                        try (Socket socket = new Socket()) {
-                            socket.connect(new InetSocketAddress("localhost", 8080), 10);
-                            break;
-                        } catch (IOException e) {
-                        }
-                    }
-                    System.out.println("server exists");
-
-                    Client.main(new String[0]);
                     Client.main(new String[0]);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            });
-            thread.start();
+            };
 
-            periodic.run();
+            new Thread(clientRunnable).start();
+            new Thread(clientRunnable).start();
+
+            new Thread(periodic).start();
             server.start();
 
             //GUI gui = new GUI("startTime");
@@ -93,8 +107,8 @@ public class Server {
         return a * b;
     }
 
-    private void start() throws IOException {
-        Selector selector = Selector.open();
+    private void init() throws IOException {
+        selector = Selector.open();
         ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.configureBlocking(false);
 
@@ -102,9 +116,11 @@ public class Server {
         InetSocketAddress endpoint = new InetSocketAddress("localhost", port);
         serverSocketChannel.socket().bind(endpoint);
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
+    }
 
+    private void start() throws IOException {
         while (true) {
-            int readyCount = selector.select(100);
+            int readyCount = selector.select();
             if (Integer.valueOf(0).equals(readyCount)) {
                 continue;
             }
@@ -126,9 +142,10 @@ public class Server {
         }
     }
 
-    private void write(SelectionKey selectionKey) throws IOException {
+    private synchronized void write(SelectionKey selectionKey) throws IOException {
         SocketChannel client = (SocketChannel) selectionKey.channel();
         ByteBuffer buffer = ByteBuffer.allocate(BUFFER_SIZE);
+
         int value = input;
         if (fSent)
             value += 20;
@@ -136,7 +153,7 @@ public class Server {
             fSent = true;
             value += 10;
         }
-        System.out.printf("send %d\n", value);
+        System.err.printf("send %d\n", value);
 
         byte[] bytes = String.valueOf(value).getBytes();
         buffer.put(bytes);
@@ -163,18 +180,24 @@ public class Server {
         System.arraycopy(buffer.array(), 0, data, 0, numRead);
         String s = new String(data);
         Integer res = Integer.parseInt(s);
+        finalResult *= res;
+        System.err.println(finalResult);
         returns.add(res);
         buffer.flip();
-        if (Integer.valueOf(2).equals(returns.size())) {
-            //resultComputed = true;
-            //finalResult = F(returns.get(0), returns.get(1));
-            System.out.println("server final result = " + finalResult);
-            System.exit(0);
+
+        synchronized (sync) {
+            if (state == State.COMPUTING) {
+                if (returns.size() == 2 || res.equals(0)) {
+                    state = State.DONE;
+                }
+            }
         }
 
-        if (res.equals(0)) {
-            System.out.println("client returned 0 -> quitting");
-            System.exit(0);
+        if (state == State.DONE) {
+            synchronized (prompt) {
+                System.out.println("server final result = " + finalResult);
+                System.exit(0);
+            }
         }
     }
 
@@ -188,5 +211,6 @@ public class Server {
         client.register(selector, SelectionKey.OP_WRITE);
 
         String clientAddress = client.getRemoteAddress().toString();
+        System.err.println(clientAddress);
     }
 }

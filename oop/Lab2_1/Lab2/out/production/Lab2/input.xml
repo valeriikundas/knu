@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Lab1:Medicine xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:Lab1="http://nure.ua/thao/SummaryTask3/entity"
+		xsi:schemaLocation="http://nure.ua/thao/SummaryTask3/entity input.xsd">		
+		
+	<Medication>
+		<Name>Энам</Name>
+		<Pharm>Dr.Reddy's</Pharm>
+		<Group>Понижает артериальное давление</Group>
+		<Analogs>Эналоприл</Analogs>
+		<Versions>Таблетки</Versions>
+		<Certificate>3333333</Certificate>
+		<Package>Упаковка по 10 табл</Package>
+		<Dosage>1 табл раз в день</Dosage>
+	</Medication>
+	
+	<Medication>
+		<Name>Мезим</Name>
+		<Pharm>Berlin-chemie</Pharm>
+		<Group>Ферментные препараты</Group>
+		<Analogs>Креон, панкреатин, панщинорм</Analogs>
+		<Versions>Таблетки</Versions>
+		<Certificate>0293410</Certificate>
+		<Package>Упавкова по 10 таб </Package>
+		<Dosage>по 1 таблетке во время еды 2-3 раза в день</Dosage>
+	</Medication>
+
+	<Medication>
+		<Name>Ношпа</Name>
+		<Pharm>Sanofi</Pharm>
+		<Group>Спазмалитик</Group>
+		<Analogs>Дротаверин</Analogs>
+		<Versions>Ампулы</Versions>
+		<Certificate>2937983</Certificate>
+		<Package>Упаковка по 24 таблетки</Package>
+		<Dosage>40мг в таблетке</Dosage>
+	</Medication>	
+
+</Lab1:Medicine>

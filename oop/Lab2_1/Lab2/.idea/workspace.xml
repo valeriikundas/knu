@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c1c27eba-9fe4-4fbc-a872-4805999e7543" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/input-invalid.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input-invalid.xml.dom-result.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input.xml.dom-result.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/input.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../nm/4/integral.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../nm/4/integral.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../spos/1/server/src/com/company/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../spos/1/server/src/com/company/Server.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/input.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Medicine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Medication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+              <folding>
+                <element signature="method#setName#0;class#Medication#0" />
+                <element signature="method#getName#0;class#Medication#0" />
+                <element signature="method#setPharm#0;class#Medication#0" />
+                <element signature="method#getPharm#0;class#Medication#0" />
+                <element signature="method#setGroup#0;class#Medication#0" />
+                <element signature="method#getGroup#0;class#Medication#0" />
+                <element signature="method#setAnalogs#0;class#Medication#0" />
+                <element signature="method#getAnalogs#0;class#Medication#0" />
+                <element signature="method#setVersions#0;class#Medication#0" />
+                <element signature="method#getVersions#0;class#Medication#0" />
+                <element signature="method#getCertificate#0;class#Medication#0" />
+                <element signature="method#setPackagemy#0;class#Medication#0" />
+                <element signature="method#getPackagemy#0;class#Medication#0" />
+                <element signature="method#getDosage#0;class#Medication#0" />
+                <element signature="method#toString#0;class#Medication#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Country</find>
+      <find>Depositor</find>
+      <find>AccountID</find>
+      <find>Type</find>
+      <find>Versions</find>
+      <find>AmountOnDeposit</find>
+      <find>Profitability</find>
+      <find>TimeConstraints</find>
+      <find>Bank</find>
+      <find>Deposit</find>
+      <find>Amount</find>
+      <find>constraints</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Pharm</replace>
+      <replace>Group</replace>
+      <replace>Analogs</replace>
+      <replace>Versions</replace>
+      <replace>Certificate</replace>
+      <replace>Package</replace>
+      <replace>Dosage</replace>
+      <replace>Medicine</replace>
+      <replace>Medication</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/constants/Constants.java" />
+        <option value="$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/controller/SAXController.java" />
+        <option value="$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/entity/Deposit.java" />
+        <option value="$PROJECT_DIR$/output.dom.xml" />
+        <option value="$PROJECT_DIR$/src/Bank.java" />
+        <option value="$PROJECT_DIR$/src/DOMController.java" />
+        <option value="$PROJECT_DIR$/src/SAXController.java" />
+        <option value="$PROJECT_DIR$/src/STAXController.java" />
+        <option value="$PROJECT_DIR$/src/Deposit.java" />
+        <option value="$PROJECT_DIR$/src/XML.java" />
+        <option value="$PROJECT_DIR$/input.xsd" />
+        <option value="$PROJECT_DIR$/input.xml" />
+        <option value="$PROJECT_DIR$/input-invalid.xml.dom-result.xml" />
+        <option value="$PROJECT_DIR$/input.xml.dom-result.xml" />
+        <option value="$PROJECT_DIR$/input-invalid.xml" />
+        <option value="$PROJECT_DIR$/src/Constants.java" />
+        <option value="$PROJECT_DIR$/src/Files.java" />
+        <option value="$PROJECT_DIR$/src/Constants/Files.java" />
+        <option value="$PROJECT_DIR$/src/DOM.java" />
+        <option value="$PROJECT_DIR$/src/STAX.java" />
+        <option value="$PROJECT_DIR$/src/Entities/Medicine.java" />
+        <option value="$PROJECT_DIR$/src/Entities/input.xml" />
+        <option value="$PROJECT_DIR$/src/SAX.java" />
+        <option value="$PROJECT_DIR$/src/Entity/Medicine.java" />
+        <option value="$PROJECT_DIR$/output.sax.xml" />
+        <option value="$PROJECT_DIR$/src/Utilities/Sorter.java" />
+        <option value="$PROJECT_DIR$/src/Sorter.java" />
+        <option value="$PROJECT_DIR$/src/Medicine.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Medication.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="432" />
+    <option name="y" value="436" />
+    <option name="width" value="1385" />
+    <option name="height" value="745" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Lab2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544006867360" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Java-Core-master/training/Practice7" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\university\3\OOP\Lab2\src" />
+      <recent name="D:\university\3\OOP\Lab2\src\Entity" />
+      <recent name="D:\university\3\OOP\Lab2\src\Entities" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Lab2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1c27eba-9fe4-4fbc-a872-4805999e7543" name="Default Changelist" comment="" />
+      <created>1542127857698</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1542127857698</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="-30" width="1920" height="1110" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30149412" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.93645483" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32885906" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+      <window_info anchor="right" id="Maven" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27919462" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.13825503" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32885906" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="7" />
+    </layout-to-restore>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/SAX.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="dbf" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/constants/Constants.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/constants/XML.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/controller/DOMController.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/controller/SAXController.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/controller/STAXController.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/entity/Bank.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/entity/Deposit.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/util/Sorter.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/Main.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.xml/jdk/xml/internal/JdkXmlUtils.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/src/ua/nure/thao/Practice7/Demo.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.xml/javax/xml/parsers/DocumentBuilder.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.xml/jdk/xml/internal/SecuritySupport.java" />
+    <entry file="file://$PROJECT_DIR$/output.stax.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-300" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/test/ua/nure/thao/SummaryTask3/DemoTest.java" />
+    <entry file="file://$PROJECT_DIR$/../Java-Core-master/training/Practice7/test/ua/nure/thao/SummaryTask3/AllTests.java" />
+    <entry file="file://$PROJECT_DIR$/src/Constants/Files.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Constants/XML.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.xml.dom-result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.xsd">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="40" selection-end-line="30" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entities/input.xsd" />
+    <entry file="file://$PROJECT_DIR$/src/Entities/input.xml" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/input.xml" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/input.xml.dom-result.xml" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/input.xsd" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/input-invalid.xml" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/input-invalid.xml.dom-result.xml" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/output.dom.xml" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/output.sax.xml" />
+    <entry file="file://$PROJECT_DIR$/input-invalid.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="36" selection-start-line="36" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input-invalid.xml.dom-result.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.dom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/output.sax.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-10.0.2/lib/src.zip!/java.xml/org/xml/sax/InputSource.java" />
+    <entry file="file://$PROJECT_DIR$/src/Sorter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/STAX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SAX.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Lab2.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DOM.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/input.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.attach_pid27190">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Medicine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Medication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
+          <folding>
+            <element signature="method#setName#0;class#Medication#0" />
+            <element signature="method#getName#0;class#Medication#0" />
+            <element signature="method#setPharm#0;class#Medication#0" />
+            <element signature="method#getPharm#0;class#Medication#0" />
+            <element signature="method#setGroup#0;class#Medication#0" />
+            <element signature="method#getGroup#0;class#Medication#0" />
+            <element signature="method#setAnalogs#0;class#Medication#0" />
+            <element signature="method#getAnalogs#0;class#Medication#0" />
+            <element signature="method#setVersions#0;class#Medication#0" />
+            <element signature="method#getVersions#0;class#Medication#0" />
+            <element signature="method#getCertificate#0;class#Medication#0" />
+            <element signature="method#setPackagemy#0;class#Medication#0" />
+            <element signature="method#getPackagemy#0;class#Medication#0" />
+            <element signature="method#getDosage#0;class#Medication#0" />
+            <element signature="method#toString#0;class#Medication#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
